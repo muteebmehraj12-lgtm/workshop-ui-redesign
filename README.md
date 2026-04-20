@@ -1,70 +1,145 @@
-# Getting Started with Create React App
+# Workshop Booking UI/UX Enhancement (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. Overview
+This project focuses on improving the UI/UX of the workshop booking platform provided in the assignment.
 
-## Available Scripts
+The original repository is built using Django and primarily focuses on backend functionality. The goal was to enhance usability, responsiveness, and overall user experience using React.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 2. Initial Analysis of the Repository
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I cloned and attempted to run the provided Django project to understand its structure and functionality.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+During this process, several issues were identified which affected usability.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 3. Problems Identified
 
-### `npm run build`
+### 3.1 Dependency Conflicts
+- Conflicts between different Django versions (2.x, 3.x, 5.x)
+- CMS-related packages required incompatible versions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3.2 Runtime Errors
+- Errors like `no such table: cms_page`
+- Missing or non-functional frontend rendering
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3.3 Version Compatibility Issues
+- Deprecated imports such as `django.conf.urls.url`
+- Not compatible with modern Django versions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 4. Key Insight
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The system was:
+- Backend-heavy
+- Not easily runnable in a modern environment
+- Lacking a usable and user-friendly frontend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 5. Design Approach
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Instead of focusing only on fixing backend issues, I redesigned the frontend using React to improve usability and accessibility.
 
-## Learn More
+The aim was to create a clean, intuitive, and mobile-friendly interface while preserving the core workflow.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 6. Design Principles Used
 
-### Code Splitting
+1. Simplicity – Minimal and clean layout  
+2. Visual Hierarchy – Important elements stand out clearly  
+3. Consistency – Uniform spacing, colors, and structure  
+4. Accessibility – Easy-to-read text and touch-friendly UI  
+5. User Flow Optimization – Logical navigation across pages  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 7. Responsiveness Strategy
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Mobile-first design approach  
+2. Flexible layouts and spacing  
+3. Large, accessible buttons  
+4. Centered content for readability  
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 8. Features Implemented
 
-### Advanced Configuration
+1. Home page with clear navigation  
+2. Workshop listing page with structured layout  
+3. Booking form with validation and feedback  
+4. Smooth navigation using React Router  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 9. User Flow
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Home → Workshops → Booking
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 10. Trade-offs
+
+Due to backend dependency conflicts, mock data was used instead of integrating with the Django backend.
+
+This allowed focusing on UI/UX improvements without being blocked by environment issues.
+
+---
+
+## 11. Most Challenging Part
+
+The biggest challenge was handling dependency conflicts and version mismatches in Django and CMS packages.
+
+After multiple attempts to resolve them, it became clear that the system required significant environment restructuring.
+
+This was addressed by shifting focus toward frontend redesign.
+
+---
+
+## 12. Before vs After Comparison
+
+This comparison highlights the transformation from a non-functional backend-heavy system to a clean, user-friendly interface.
+
+### 🔴 Before (Original System)
+
+#### 12.1 Error / Broken UI
+![Error](./before_error.png)
+
+#### 12.2 Admin Interface
+![Admin](./before_admin.png)
+
+#### 12.3 Partial Page
+![Page](./before_page.png)
+
+---
+
+### 🟢 After (React UI Redesign)
+
+#### 12.4 Home Page
+![Home](./after_home.png)
+
+#### 12.5 Workshops Page
+![Workshops](./after_workshops.png)
+
+#### 12.6 Booking Page
+![Booking](./after_booking.png)
+
+
+13. Setup Instructions  
+Run the project:
+
+npm install  
+npm start  
+
+
+---
+
+## 14. Conclusion
+
+This project demonstrates how improving UI/UX can transform a backend-focused system into a user-friendly application.
+
+The focus was on clarity, usability, responsiveness, and smooth interaction.
